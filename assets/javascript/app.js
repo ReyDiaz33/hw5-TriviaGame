@@ -7,6 +7,9 @@
 
 // Psudeo Coding
 // create timer for quiz to appear on top of quiz
+console.log("app");
+
+console.log($);
 // create variables for your quiz
 // create questions for quiz (Prompts)
 // create answers from variables 
