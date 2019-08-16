@@ -50,7 +50,7 @@ function countDown() {
 
 // show question and choices
 function loadQuestion() {
-    counter = 5;
+    counter = 15;
     timer = setInterval(countDown, 1000);
 
 
@@ -74,7 +74,23 @@ function loadChoices(choices) {
 }
 // create click event for multiple choice answers
 
-$()
+$(document).on("click", ".choice", function(){
+    clearInterval(timer);
+    var answerSelect = $(this).attr('data-answer');
+    var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
+    
+    if( correctAnswer === answerSelect){
+        score++;
+        nextQuestion();
+        console.log("winner")
+    } else {
+        loss++;
+        nextQuestion();
+        console.log("Loser")
+    }
+    
+    console.log("yeah!" + answerSelect);
+});;
 
 
 loadQuestion();
