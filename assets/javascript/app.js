@@ -16,14 +16,28 @@ var lost = 0;
 var timer;
 
 // show question and choices
+function loadQuestion() {
+    counter = 30;
 
-function loadQuestion(){
+
     var question = quizQuestions[currentQuestion].question;
-    var choices = quizQuestions[currentQuestion.choices];
-    
-    $("#game").html("<h4>" + question + "</h4>")
+    var choices = quizQuestions[currentQuestion].choices;
+    $("#timer").html("Timer: " + counter);
+    $("#game").html("<h4>" + question + "</h4>");
+    $("#game").append(loadChoices(choices));
+    console.log(choices)
 }
 
+function loadChoices(choices) {
+    var result = "";
+
+    for (var i = 0; i < choices.length; i++) {
+        result += `<p class="choice" data-answer="${choices[i]}">${choices[i]}</p>`;
+    }
+
+    return result;
+
+}
 loadQuestion();
 
 // Psudeo Coding
@@ -32,4 +46,3 @@ loadQuestion();
 // create questions for quiz (Prompts)
 // create answers from variables 
 // create click event for multiple choice answers
-// 
