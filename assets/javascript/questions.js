@@ -1,1 +1,5 @@
-console.log('questions');
+var questions = [{
+    question: '',
+    choices: [],
+    correctAnswer: '',
+}];
