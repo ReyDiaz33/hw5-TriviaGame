@@ -22,9 +22,11 @@ function nextQuestion() {
     var noMoreQuestions = (quizQuestions.length - 1) === currentQuestion;
     if (noMoreQuestions) {
         console.log("Game Over!");
+        showAnswer();
     } else {
         currentQuestion++;
         loadQuestion();
+
     }
 }
 
@@ -74,12 +76,12 @@ function loadChoices(choices) {
 }
 // create click event for multiple choice answers
 
-$(document).on("click", ".choice", function(){
+$(document).on("click", ".choice", function () {
     clearInterval(timer);
     var answerSelect = $(this).attr('data-answer');
     var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
-    
-    if( correctAnswer === answerSelect){
+
+    if (correctAnswer === answerSelect) {
         score++;
         nextQuestion();
         console.log("winner")
@@ -88,10 +90,36 @@ $(document).on("click", ".choice", function(){
         nextQuestion();
         console.log("Loser")
     }
-    
+
     console.log("yeah!" + answerSelect);
 });;
 
+// game over results
+function showAnswer() {
+    var result = `
+        <p>You got ${score} questions right</p>
+        <p>You answered ${loss} questions incorrectly</p>
+        <p>Out of a total of  ${quizQuestions.length} questions</p>
+        <button class="btn btn-primary" id="reset">Reset Game</button>
+    `;
+
+    $('#game').html(result);
+}
+
+
+
+// reset button
+$(document).on("click", "#reset", function () {
+     counter = 5;
+     currentQuestion = 0;
+     score = 0;
+     loss = 0;
+     timer = null;
+
+    loadQuestion();
+
+    console.log("ResetClick")
+});;
 
 loadQuestion();
 
