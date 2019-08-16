@@ -5,12 +5,30 @@
 - Don't let the player pick more than one answer per question.
 - Don't forget to include a countdown timer.*/
 
+
+console.log(quizQuestions);
+
+// create variables for your quiz
+var counter = 30;
+var currentQuestion = 0;
+var score = 0;
+var lost = 0;
+var timer;
+
+// show question and choices
+
+function loadQuestion(){
+    var question = quizQuestions[currentQuestion].question;
+    var choices = quizQuestions[currentQuestion.choices];
+    
+    $("#game").html("<h4>" + question + "</h4>")
+}
+
+loadQuestion();
+
 // Psudeo Coding
 // create timer for quiz to appear on top of quiz
-console.log("app");
 
-console.log($);
-// create variables for your quiz
 // create questions for quiz (Prompts)
 // create answers from variables 
 // create click event for multiple choice answers

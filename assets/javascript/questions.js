@@ -1,4 +1,4 @@
-var questions = [
+var quizQuestions = [
     {
     question: "What phrase is said as the Power Rangers transform?",
     choices: ["Cowabunga!", "Eat My Shorts!", "Respect My Authority!", "It's Morphin Time"],
