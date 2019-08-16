@@ -12,12 +12,46 @@ console.log(quizQuestions);
 var counter = 30;
 var currentQuestion = 0;
 var score = 0;
-var lost = 0;
+var loss = 0;
 var timer;
+
+
+
+// Times up and goes to next question
+function nextQuestion() {
+    var noMoreQuestions = (quizQuestions.length - 1) === currentQuestion;
+    if (noMoreQuestions) {
+        console.log("Game Over!");
+    } else {
+        currentQuestion++;
+        loadQuestion();
+    }
+}
+
+
+
+// create timer for quiz to appear on top of quiz
+function timesUp() {
+    clearInterval(timer);
+
+    loss++;
+    nextQuestion();
+}
+
+
+function countDown() {
+    counter--;
+    $("#timer").html("Timer: " + counter);
+
+    if (counter === 0) {
+        timesUp();
+    }
+}
 
 // show question and choices
 function loadQuestion() {
-    counter = 30;
+    counter = 5;
+    timer = setInterval(countDown, 1000);
 
 
     var question = quizQuestions[currentQuestion].question;
@@ -38,11 +72,11 @@ function loadChoices(choices) {
     return result;
 
 }
+// create click event for multiple choice answers
+
+$()
+
+
 loadQuestion();
 
 // Psudeo Coding
-// create timer for quiz to appear on top of quiz
-
-// create questions for quiz (Prompts)
-// create answers from variables 
-// create click event for multiple choice answers

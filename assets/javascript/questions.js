@@ -1,3 +1,6 @@
+// create questions for quiz (Prompts)
+// create answers from variables 
+
 var quizQuestions = [
     {
     question: "What phrase is said as the Power Rangers transform?",
@@ -24,7 +27,7 @@ var quizQuestions = [
 },
 
 {
-    question: 'What color did the weapon did the White Ranger carry?',
+    question: 'What weapon did the White Ranger carry?',
     choices: ["Tiger Sword", "Staff", "Katana", "Power Glove"],
     correctAnswer: 'Tiger',
 },
