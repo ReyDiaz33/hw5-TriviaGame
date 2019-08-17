@@ -1,3 +1,20 @@
+body{
+    background-image: url(../images/powerRangerBackground.png);
+    background-size: 100%;
+    color: white;
+    font-family: 'Russo One', sans-serif;
+
+}
+
+
+.jumbotron{
+    background-color: transparent;
+    background-size: 100%;
+    text-align: center;
+    height: 350px;
+    
+}
+
 .choice{
     border: 1px solid lightgrey;
     padding: 10px;
@@ -5,10 +22,7 @@
     cursor: pointer;
 }
 
-body{
-    /* background-image: url(../images/powerRangerBackground.png); */
+#game{
+    padding-bottom: 450px;
 }
 
-.jumbotron{
-    /* background-image: url(../images/PRbackground.jpg); */
-}
