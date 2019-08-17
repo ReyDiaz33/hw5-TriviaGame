@@ -4,3 +4,11 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+body{
+    /* background-image: url(../images/powerRangerBackground.png); */
+}
+
+.jumbotron{
+    /* background-image: url(../images/PRbackground.jpg); */
+}

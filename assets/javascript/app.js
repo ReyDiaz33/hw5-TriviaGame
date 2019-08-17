@@ -37,7 +37,9 @@ function timesUp() {
     clearInterval(timer);
 
     loss++;
-    nextQuestion();
+
+    preloadImage('lose');
+    setTimeout(nextQuestion, 3 * 1000);
 }
 
 
@@ -61,6 +63,8 @@ function loadQuestion() {
     $("#timer").html("Timer: " + counter);
     $("#game").html("<h4>" + question + "</h4>");
     $("#game").append(loadChoices(choices));
+    $("#game").append(remainingQuestions());
+
     console.log(choices)
 }
 
@@ -83,11 +87,13 @@ $(document).on("click", ".choice", function () {
 
     if (correctAnswer === answerSelect) {
         score++;
-        nextQuestion();
+        preloadImage('win');
+        setTimeout(nextQuestion, 3 * 1000);
         console.log("winner")
     } else {
         loss++;
-        nextQuestion();
+        preloadImage('lose');
+        setTimeout(nextQuestion, 3 * 1000);
         console.log("Loser")
     }
 
@@ -122,5 +128,23 @@ $(document).on("click", "#reset", function () {
 });;
 
 loadQuestion();
+
+// REMAINING QUESTIONS UNDER CHOICES
+function remainingQuestions() {
+    const remainingQuestion = quizQuestions.length - (currentQuestion + 1);
+    const totalQuestion = quizQuestions.length;
+
+    return `Remaining Question: ${remainingQuestion}/${totalQuestion}`;
+}
+
+function preloadImage(status) {
+    var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
+
+    if(status === 'win') {
+        $('#game').html("WAY TO GO RANGER! The answer was " + correctAnswer)
+    } else{
+        $('#game').html("WHOA! WAY OFF! The correct answer was " + correctAnswer)
+    }
+}
 
 // Psudeo Coding
