@@ -127,7 +127,6 @@ $(document).on("click", "#reset", function () {
     console.log("ResetClick")
 });;
 
-loadQuestion();
 
 // REMAINING QUESTIONS UNDER CHOICES
 function remainingQuestions() {
@@ -146,5 +145,11 @@ function preloadImage(status) {
         $('#game').html("WHOA! WAY OFF! The correct answer was " + correctAnswer)
     }
 }
+
+$("#start").click(function(){
+    $("#start").remove();
+    $("#timer").html(counter);
+    loadQuestion();
+});;
 
 // Psudeo Coding
