@@ -140,7 +140,9 @@ function preloadImage(status) {
     var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
 
     if(status === 'win') {
-        $('#game').html("WAY TO GO RANGER! The answer was " + correctAnswer)
+        
+        $('#game').html("WAY TO GO RANGER! The answer was " + correctAnswer),
+        $('#answerGif').append("./assets/images/correct1.gif")
     } else{
         $('#game').html("WHOA! WAY OFF! The correct answer was " + correctAnswer)
     }
@@ -148,6 +150,7 @@ function preloadImage(status) {
 
 $("#start").click(function(){
     $("#start").remove();
+    $("#imageContainer").remove();
     $("#timer").html(counter);
     loadQuestion();
 });;

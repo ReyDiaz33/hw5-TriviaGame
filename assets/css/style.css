@@ -24,6 +24,10 @@ body{
 }
 
 #game{
-    padding-bottom: 450px;
+    padding-bottom: 390px;
+}
+
+#imageContainer{
+    padding-top: 10px;
 }
 
