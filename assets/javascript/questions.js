@@ -34,19 +34,19 @@ var quizQuestions = [
 
 ];
 
-// Gigphy for right and wrong answers
+// Gigphy for right and wrong answers NOT WORKING!!!!!!
 var correctGifs = [
-    "/assets/images/correct1.gif",
-    "/assets/images/correct2.gif",
-    "/assets/images/correct3.gif",
-    "/assets/images/correct4.gif",
-    "/assets/images/correct5.gif",
+    "./assets/images/correct1.gif",
+    "./assets/images/correct2.gif",
+    "./assets/images/correct3.gif",
+    "./assets/images/correct4.gif",
+    "./assets/images/correct5.gif",
 ];
 
 var wrongGifs = [
-    "../assets/images/wrong1.gif", 
-    "../assets/images/wrong2.gif", 
-    "../assets/images/wrong3.gif", 
-    "../assets/images/wrong4.gif", 
-    "../assets/images/wrong5.gif", 
+    "./assets/images/wrong1.gif",
+    "./assets/images/wrong2.gif",
+    "./assets/images/wrong3.gif",
+    "./assets/images/wrong4.gif",
+    "./assets/images/wrong5.gif",
 ];

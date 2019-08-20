@@ -116,11 +116,11 @@ function showAnswer() {
 
 // reset button
 $(document).on("click", "#reset", function () {
-     counter = 5;
-     currentQuestion = 0;
-     score = 0;
-     loss = 0;
-     timer = null;
+    counter = 5;
+    currentQuestion = 0;
+    score = 0;
+    loss = 0;
+    timer = null;
 
     loadQuestion();
 
@@ -138,17 +138,22 @@ function remainingQuestions() {
 
 function preloadImage(status) {
     var correctAnswer = quizQuestions[currentQuestion].correctAnswer;
+    var corrrectGif = `<br><img src="${correctGifs[Math.floor(Math.random() * 5)]}">`
+    var wrongGif = `<br> <img src="${wrongGifs[Math.floor(Math.random() * 5)]}">`
 
-    if(status === 'win') {
+    if (status === 'win') {
         
-        $('#game').html("WAY TO GO RANGER! The answer was " + correctAnswer),
-        $('#answerGif').append("./assets/images/correct1.gif")
-    } else{
-        $('#game').html("WHOA! WAY OFF! The correct answer was " + correctAnswer)
+        $('#game').html("WAY TO GO RANGER! The answer was " + correctAnswer + corrrectGif)
+
+
+        
+    } else {
+        $('#game').html("WHOA! WAY OFF! The correct answer was " + correctAnswer + wrongGif)
     }
 }
 
-$("#start").click(function(){
+// START BUTTON
+$("#start").click(function () {
     $("#start").remove();
     $("#imageContainer").remove();
     $("#timer").html(counter);
